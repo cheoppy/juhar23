@@ -64,18 +64,6 @@
       padding: 14px;
     }
 
-    .pitch {
-      margin: 12px 0 0;
-      padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--card);
-      box-shadow: var(--shadow);
-      font-size: .94rem;
-    }
-
-    .pitch b { color: var(--ok); }
-
     .toolbar {
       display: grid;
       grid-template-columns: 1fr;
@@ -248,6 +236,47 @@
       .grid { grid-template-columns: 1fr 1fr; }
       .card.full { grid-column: 1 / -1; }
     }
+  
+    .head {
+      display: grid !important;
+      grid-template-columns: auto auto 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .head > div {
+      min-width: 0;
+    }
+
+    .portrait {
+      width: 56px !important;
+      height: 56px !important;
+      min-width: 56px !important;
+      max-width: 56px !important;
+      min-height: 56px !important;
+      max-height: 56px !important;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--card2);
+      display: block;
+    }
+
+    .head:not(:has(.portrait)) {
+      grid-template-columns: auto 1fr;
+    }
+
+  
+    .card:not(.has-photo) .head {
+      grid-template-columns: auto 1fr !important;
+    }
+
+    .card.has-photo .head {
+      grid-template-columns: auto auto 1fr !important;
+    }
+
   </style>
 </head>
 <body>
@@ -272,25 +301,25 @@
   <section id="top">
     <div class="section-title">Ha csak 5 emberre van idő</div>
     <div class="grid">
-      <article class="card" data-prio="A" data-search="Puskás Bence D-BUG Studios VFX producer animation animáció">
+      <article class="card has-photo" data-prio="A" data-search="Puskás Bence D-BUG Studios VFX producer animation animáció">
         <div class="head"><span class="prio a">A</span><img class="portrait" src="Bence_Puskas.png" alt="Puskás Bence fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Puskás Bence</p><p class="role">D-BUG Studios · VFX producer</p></div></div>
         <p class="why"><b>Leggyorsabb konkrét lead:</b> VFX producer; animációs/VFX beszállítói irányban jó kapcsolódás.</p>
         <p class="goal">Cél: rövid call + showreel.</p>
       </article>
 
-      <article class="card" data-prio="A" data-search="Petra Iványi Lions Production producer funding koprodukció">
+      <article class="card has-photo" data-prio="A" data-search="Petra Iványi Lions Production producer funding koprodukció">
         <div class="head"><span class="prio a">A</span><img class="portrait" src="petra_ivanyi.jpeg" alt="Petra Iványi fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Petra Iványi</p><p class="role">Lions Production · Founder / Producer</p></div></div>
         <p class="why"><b>Producer / funding / koprodukció:</b> feature & TV, nemzetközi service production.</p>
         <p class="goal">Cél: stratégiai produceri kapcsolat.</p>
       </article>
 
-      <article class="card" data-prio="A" data-search="Vladimir Gerasimov Lions Production Partner Producer reklám">
+      <article class="card has-photo" data-prio="A" data-search="Vladimir Gerasimov Lions Production Partner Producer reklám">
         <div class="head"><span class="prio a">A</span><img class="portrait" src="Vladimir_Gerasimov.jpeg" alt="Vladimir Gerasimov fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Vladimir Gerasimov</p><p class="role">Lions Production · Partner / Producer</p></div></div>
         <p class="why"><b>Reklám + CEE production:</b> bolgár/regionális reklámfilmes produceri háttér.</p>
         <p class="goal">Cél: reklám / service / regionális partner.</p>
       </article>
 
-      <article class="card" data-prio="A" data-search="Judit Stalter Laokoon Filmgroup producer international service">
+      <article class="card has-photo" data-prio="A" data-search="Judit Stalter Laokoon Filmgroup producer international service">
         <div class="head"><span class="prio a">A</span><img class="portrait" src="Judit_Stalter.jpeg" alt="Judit Stalter fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Judit Stalter</p><p class="role">Laokoon Filmgroup · CEO / Producer</p></div></div>
         <p class="why"><b>High-end stratégiai producer:</b> nemzetközi produkciók, USA–EU kapcsolatok.</p>
         <p class="goal">Cél: hosszabb távú produceri kapcsolat.</p>
@@ -371,14 +400,14 @@
         <details><summary>Részletek</summary><div class="details"><ul><li>Animációhoz: sound design, foley, voice cleanup, mix, delivery.</li></ul><div class="tagrow"><span class="tag">sound</span><span class="tag">audio-post</span></div></div></details>
       </article>
 
-      <article class="card" data-prio="B" data-search="Rob Saunders SCS Exhibitions Euro Cine BSC Expo networking UK">
+      <article class="card has-photo" data-prio="B" data-search="Rob Saunders SCS Exhibitions Euro Cine BSC Expo networking UK">
         <div class="head"><span class="prio b">B+</span><img class="portrait" src="rob_saunders.jpg" alt="Rob Saunders fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Rob Saunders</p><p class="role">SCS Exhibitions · Euro Cine / BSC Expo</p></div></div>
         <p class="why">Erős rendezvényszervezői / UK film-TV networking kapu.</p>
         <p class="goal">Cél: bevezetők, ajánlások.</p>
         <details><summary>Részletek</summary><div class="details"><ul><li>BSC Expo / British Society of Cinematographers kapcsolódás.</li><li>Nem buyer, de erős network- és event-kapu.</li></ul><div class="tagrow"><span class="tag">event</span><span class="tag">network</span><span class="tag">UK</span></div></div></details>
       </article>
 
-      <article class="card" data-prio="B" data-search="Brian Donovan PGGB line producer UK production">
+      <article class="card has-photo" data-prio="B" data-search="Brian Donovan PGGB line producer UK production">
         <div class="head"><span class="prio b">B</span><img class="portrait" src="Brian_Donovan.jpeg" alt="Brian Donovan fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Brian Donovan</p><p class="role">PGGB · line producer / production network</p></div></div>
         <p class="why">UK production / line producer / Production Guild network.</p>
         <p class="goal">Cél: UK produceri / production network.</p>
@@ -399,21 +428,21 @@
         <details><summary>Részletek</summary><div class="details"><ul><li>Rendező, író, kulturális és media art háttér.</li></ul><div class="tagrow"><span class="tag">creative</span><span class="tag">writer</span></div></div></details>
       </article>
 
-      <article class="card" data-prio="C" data-search="Jonathan Harvey cinematographer Aalto DoP NFTS">
+      <article class="card has-photo" data-prio="C" data-search="Jonathan Harvey cinematographer Aalto DoP NFTS">
         <div class="head"><span class="prio c">C+</span><img class="portrait" src="jonathan_harvey.webp" alt="Jonathan Harvey fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Jonathan Harvey</p><p class="role">Cinematographer · Aalto University</p></div></div>
         <p class="why">DoP + oktatói kapcsolat, jó puha személyes follow-up.</p>
         <p class="goal">Cél: puha kapcsolatépítés.</p>
         <details><summary>Részletek</summary><div class="details"><ul><li>26 év cinematographer tapasztalat, NFTS UK.</li><li>Későbbi téma: live-action + VFX/animation integráció.</li></ul><div class="tagrow"><span class="tag">DoP</span><span class="tag">soft follow-up</span></div></div></details>
       </article>
 
-      <article class="card" data-prio="C" data-search="Miklos Buk HCA cinematographer AFI SZFE">
+      <article class="card has-photo" data-prio="C" data-search="Miklos Buk HCA cinematographer AFI SZFE">
         <div class="head"><span class="prio c">C+</span><img class="portrait" src="miklos_buk.jpg" alt="Miklos Buk HCA fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Miklos Buk HCA</p><p class="role">Freelance Cinematographer</p></div></div>
         <p class="why">Cinematography / HCA / nemzetközi operatőri network.</p>
         <p class="goal">Cél: szakmai network.</p>
         <details><summary>Részletek</summary><div class="details"><ul><li>AFI MFA + SZFE operatőri háttér.</li><li>Virtual production, VFX-supervised shooting, CG integration irány lehet érdekes.</li></ul><div class="tagrow"><span class="tag">cinematography</span><span class="tag">HCA</span></div></div></details>
       </article>
 
-      <article class="card" data-prio="C" data-search="Henrik Moseid Softlights lighting cinematography">
+      <article class="card has-photo" data-prio="C" data-search="Henrik Moseid Softlights lighting cinematography">
         <div class="head"><span class="prio c">C+</span><img class="portrait" src="henrik_moseid.png" alt="Henrik Moseid fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Henrik Moseid</p><p class="role">Softlights · Owner</p></div></div>
         <p class="why">Lighting / cinematography technikai kapcsolat.</p>
         <p class="goal">Cél: technikai kapcsolat.</p>
@@ -421,7 +450,7 @@
       </article>
 
 
-      <article class="card" data-prio="C" data-search="Weyer Balázs világzene újságíró Hangvető Music Hungary PR media culture">
+      <article class="card has-photo" data-prio="C" data-search="Weyer Balázs világzene újságíró Hangvető Music Hungary PR media culture">
         <div class="head"><span class="prio c">C</span><img class="portrait" src="balazs_weyer.jpg" alt="Weyer Balázs fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Weyer Balázs</p><p class="role">újságíró / világzenei-kulturális kapcsolatok</p></div></div>
         <p class="why">PR, kulturális média és zenei-kulturális kapcsolódás; anyagot lehet neki küldeni.</p>
         <p class="goal">Cél: kulturális / média láthatóság, nem közvetlen buyer.</p>
@@ -438,7 +467,7 @@
         </details>
       </article>
 
-      <article class="card" data-prio="C" data-search="Iain Hazlewood Cinematography World editor PR media">
+      <article class="card has-photo" data-prio="C" data-search="Iain Hazlewood Cinematography World editor PR media">
         <div class="head"><span class="prio c">C</span><img class="portrait" src="iain_hazlewood.jpg" alt="Iain Hazlewood fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Iain Hazlewood</p><p class="role">Cinematography World · editor / digital manager</p></div></div>
         <p class="why">Szakmai média / PR / interjú lehetőség, nem buyer.</p>
         <p class="goal">Cél: cikk / interjú / láthatóság.</p>
