@@ -29,6 +29,15 @@
     .grid { display: grid; gap: 10px; }
     .card { border: 1px solid var(--line); border-radius: 18px; background: var(--card); padding: 12px; box-shadow: var(--shadow); }
     .head { display: flex; gap: 10px; align-items: flex-start; }
+    .portrait {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: var(--card2);
+      flex: 0 0 auto;
+    }
     .prio { font-weight: 900; min-width: 44px; text-align: center; border-radius: 999px; padding: 5px 8px; font-size: .88rem; color: #111; flex: 0 0 auto; }
     .prio.a { background: var(--a); } .prio.b { background: var(--b); } .prio.c { background: var(--c); }
     .name { font-weight: 850; font-size: 1.04rem; margin: 0; }
@@ -109,7 +118,7 @@
       </article>
     
       <article class="card" data-prio="A" data-search="Petra Iványi Lions Production producer funding co-production EAVE EFA">
-        <div class="head"><span class="prio a">A</span><div><p class="name">Petra Iványi</p><p class="role">Lions Production · Founder / Producer</p></div></div>
+        <div class="head"><span class="prio a">A</span><img class="portrait" src="petra_ivanyi.jpeg" alt="Petra Iványi fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Petra Iványi</p><p class="role">Lions Production · Founder / Producer</p></div></div>
         <p class="why">Funding, koprodukció, feature/TV, nemzetközi service production.</p>
         <p class="goal">Cél: stratégiai produceri kapcsolat.</p>
         
@@ -125,7 +134,7 @@
       </article>
     
       <article class="card" data-prio="A" data-search="Vladimir Gerasimov Lions reklám producer CEE Bulgaria">
-        <div class="head"><span class="prio a">A</span><div><p class="name">Vladimir Gerasimov</p><p class="role">Lions Production · Partner / Producer</p></div></div>
+        <div class="head"><span class="prio a">A</span><img class="portrait" src="Vladimir_Gerasimov.jpeg" alt="Vladimir Gerasimov fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Vladimir Gerasimov</p><p class="role">Lions Production · Partner / Producer</p></div></div>
         <p class="why">Reklámfilmes háttér, CEE és bolgár production network.</p>
         <p class="goal">Cél: reklám / service partner.</p>
         
@@ -140,7 +149,7 @@
       </article>
     
       <article class="card" data-prio="A" data-search="Judit Stalter Laokoon producer international service New York">
-        <div class="head"><span class="prio a">A</span><div><p class="name">Judit Stalter</p><p class="role">Laokoon Filmgroup · CEO / Producer</p></div></div>
+        <div class="head"><span class="prio a">A</span><img class="portrait" src="Judit_Stalter.jpeg" alt="Judit Stalter fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Judit Stalter</p><p class="role">Laokoon Filmgroup · CEO / Producer</p></div></div>
         <p class="why">High-end producer, nemzetközi service / koprodukciós kapu.</p>
         <p class="goal">Cél: stratégiai kapcsolat.</p>
         
@@ -219,7 +228,7 @@
       </article>
     
       <article class="card" data-prio="B" data-search="Rob Saunders SCS Exhibitions Euro Cine BSC Expo networking UK">
-        <div class="head"><span class="prio b">B+</span><div><p class="name">Rob Saunders</p><p class="role">SCS Exhibitions · Euro Cine / BSC Expo</p></div></div>
+        <div class="head"><span class="prio b">B+</span><img class="portrait" src="rob_saunders.jpg" alt="Rob Saunders fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Rob Saunders</p><p class="role">SCS Exhibitions · Euro Cine / BSC Expo</p></div></div>
         <p class="why">Erős rendezvényszervezői / UK film-TV networking kapu.</p>
         <p class="goal">Cél: bevezetők, ajánlások.</p>
         
@@ -235,7 +244,7 @@
       </article>
     
       <article class="card" data-prio="B" data-search="Brian Donovan PGGB line producer UK production">
-        <div class="head"><span class="prio b">B</span><div><p class="name">Brian Donovan</p><p class="role">PGGB · line producer / production network</p></div></div>
+        <div class="head"><span class="prio b">B</span><img class="portrait" src="Brian_Donovan.jpeg" alt="Brian Donovan fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Brian Donovan</p><p class="role">PGGB · line producer / production network</p></div></div>
         <p class="why">UK production / line producer / Production Guild network.</p>
         <p class="goal">Cél: UK produceri / production network.</p>
         
@@ -296,7 +305,7 @@
       </article>
     
       <article class="card" data-prio="C" data-search="Miklos Buk HCA cinematographer AFI SZFE">
-        <div class="head"><span class="prio c">C+</span><div><p class="name">Miklos Buk HCA</p><p class="role">Freelance Cinematographer</p></div></div>
+        <div class="head"><span class="prio c">C+</span><img class="portrait" src="miklos_buk.jpg" alt="Miklos Buk HCA fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Miklos Buk HCA</p><p class="role">Freelance Cinematographer</p></div></div>
         <p class="why">Cinematography / HCA / nemzetközi operatőri network.</p>
         <p class="goal">Cél: szakmai network.</p>
         
@@ -328,7 +337,7 @@
       </article>
     
       <article class="card" data-prio="C" data-search="Iain Hazlewood Cinematography World editor PR media">
-        <div class="head"><span class="prio c">C</span><div><p class="name">Iain Hazlewood</p><p class="role">Cinematography World · editor / digital manager</p></div></div>
+        <div class="head"><span class="prio c">C</span><img class="portrait" src="iain_hazlewood.jpg" alt="Iain Hazlewood fotó" loading="lazy" onerror="this.remove()"><div><p class="name">Iain Hazlewood</p><p class="role">Cinematography World · editor / digital manager</p></div></div>
         <p class="why">Szakmai média / PR / interjú lehetőség, nem buyer.</p>
         <p class="goal">Cél: cikk / interjú / láthatóság.</p>
         
@@ -348,7 +357,7 @@
 </main>
 
 <footer>
-  Publikus GitHub Pages verzióra tisztítva: telefonszámok és belső azonosító jegyzetek nélkül.
+  Publikus GitHub Pages verzióra tisztítva: telefonszámok és belső azonosító jegyzetek nélkül. A képek a repó root mappájában lévő fájlokra hivatkoznak.
 </footer>
 
 <script>
