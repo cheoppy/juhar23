@@ -7,226 +7,44 @@
   <meta name="description" content="Mobilbarát Euro Cine networking gyorslista animációs/VFX stúdió kapcsolatokhoz.">
   <style>
     :root {
-      --bg: #0d1117;
-      --card: #161b22;
-      --card2: #1f2630;
-      --text: #f0f3f6;
-      --muted: #a7b0bd;
-      --line: #30363d;
-      --a: #ff6b6b;
-      --b: #ffd166;
-      --c: #8ecae6;
-      --ok: #7ee787;
-      --link: #79c0ff;
+      --bg: #0d1117; --card: #161b22; --card2: #1f2630; --text: #f0f3f6; --muted: #a7b0bd;
+      --line: #30363d; --a: #ff6b6b; --b: #ffd166; --c: #8ecae6; --ok: #7ee787; --link: #79c0ff;
       --shadow: 0 12px 30px rgba(0,0,0,.25);
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.45;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: linear-gradient(180deg, rgba(13,17,23,.98), rgba(13,17,23,.92));
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-      padding: 12px 14px;
-    }
-
-    .wrap, main, footer {
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-size: 1.18rem;
-      margin: 0;
-      letter-spacing: -.02em;
-    }
-
-    .sub {
-      color: var(--muted);
-      font-size: .84rem;
-      margin-top: 3px;
-    }
-
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.45; }
+    header { position: sticky; top: 0; z-index: 20; background: linear-gradient(180deg, rgba(13,17,23,.98), rgba(13,17,23,.92)); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding: 12px 14px; }
+    .wrap, main, footer { max-width: 980px; margin: 0 auto; }
+    h1 { font-size: 1.18rem; margin: 0; letter-spacing: -.02em; }
+    .sub { color: var(--muted); font-size: .84rem; margin-top: 3px; }
     main { padding: 14px; }
-
-    .pitch {
-      margin: 12px 0 0;
-      padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--card);
-      box-shadow: var(--shadow);
-      font-size: .94rem;
-    }
-
-    .pitch b { color: var(--ok); }
-
-    .toolbar {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-      margin: 12px 0 16px;
-    }
-
-    input {
-      width: 100%;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #070b10;
-      color: var(--text);
-      padding: 12px;
-      font-size: 1rem;
-    }
-
-    .chips {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 3px;
-    }
-
-    .chip {
-      border: 1px solid var(--line);
-      background: var(--card);
-      color: var(--text);
-      padding: 8px 11px;
-      border-radius: 999px;
-      white-space: nowrap;
-      font-size: .9rem;
-      cursor: pointer;
-    }
-
+    .note { margin: 12px 0 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 14px; color: var(--muted); background: var(--card); font-size: .9rem; }
+    .toolbar { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 12px 0 16px; }
+    input { width: 100%; border: 1px solid var(--line); border-radius: 14px; background: #070b10; color: var(--text); padding: 12px; font-size: 1rem; }
+    .chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 3px; }
+    .chip { border: 1px solid var(--line); background: var(--card); color: var(--text); padding: 8px 11px; border-radius: 999px; white-space: nowrap; font-size: .9rem; cursor: pointer; }
     .chip.active { outline: 2px solid var(--link); }
-
-    .section-title {
-      font-size: .8rem;
-      text-transform: uppercase;
-      color: var(--muted);
-      letter-spacing: .08em;
-      margin: 20px 0 9px;
-    }
-
+    .section-title { font-size: .8rem; text-transform: uppercase; color: var(--muted); letter-spacing: .08em; margin: 20px 0 9px; }
     .grid { display: grid; gap: 10px; }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--card);
-      padding: 12px;
-      box-shadow: var(--shadow);
-    }
-
-    .head {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .prio {
-      font-weight: 900;
-      min-width: 44px;
-      text-align: center;
-      border-radius: 999px;
-      padding: 5px 8px;
-      font-size: .88rem;
-      color: #111;
-      flex: 0 0 auto;
-    }
-
-    .prio.a { background: var(--a); }
-    .prio.b { background: var(--b); }
-    .prio.c { background: var(--c); }
-
-    .name {
-      font-weight: 850;
-      font-size: 1.04rem;
-      margin: 0;
-    }
-
-    .role {
-      color: var(--muted);
-      font-size: .9rem;
-      margin: 2px 0 0;
-    }
-
+    .card { border: 1px solid var(--line); border-radius: 18px; background: var(--card); padding: 12px; box-shadow: var(--shadow); }
+    .head { display: flex; gap: 10px; align-items: flex-start; }
+    .prio { font-weight: 900; min-width: 44px; text-align: center; border-radius: 999px; padding: 5px 8px; font-size: .88rem; color: #111; flex: 0 0 auto; }
+    .prio.a { background: var(--a); } .prio.b { background: var(--b); } .prio.c { background: var(--c); }
+    .name { font-weight: 850; font-size: 1.04rem; margin: 0; }
+    .role { color: var(--muted); font-size: .9rem; margin: 2px 0 0; }
     .why { margin: 9px 0; }
-
-    .say {
-      border-left: 3px solid var(--link);
-      padding-left: 10px;
-      color: #dbeafe;
-      margin: 9px 0;
-      font-size: .94rem;
-    }
-
-    .goal {
-      color: var(--muted);
-      font-size: .92rem;
-      margin: 0;
-    }
-
-    details {
-      margin-top: 10px;
-      border-top: 1px solid var(--line);
-      padding-top: 8px;
-    }
-
-    summary {
-      cursor: pointer;
-      color: var(--link);
-      font-weight: 750;
-      list-style: none;
-    }
-
+    .goal { color: var(--muted); font-size: .92rem; margin: 0; }
+    details { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+    summary { cursor: pointer; color: var(--link); font-weight: 750; list-style: none; }
     summary::-webkit-details-marker { display: none; }
-
-    .details {
-      color: var(--muted);
-      font-size: .93rem;
-      margin-top: 8px;
-    }
-
-    .details ul {
-      padding-left: 18px;
-      margin: 7px 0;
-    }
-
+    .details { color: var(--muted); font-size: .93rem; margin-top: 8px; }
+    .details ul { padding-left: 18px; margin: 7px 0; }
     .details li { margin: 4px 0; }
-
-    .tagrow {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .tag {
-      font-size: .76rem;
-      color: var(--muted);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 3px 7px;
-      background: var(--card2);
-    }
-
-    footer {
-      padding: 6px 14px 42px;
-      color: var(--muted);
-      font-size: .84rem;
-    }
-
+    .details b { color: var(--text); }
+    .tagrow { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .tag { font-size: .76rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 3px 7px; background: var(--card2); }
+    footer { padding: 6px 14px 42px; color: var(--muted); font-size: .84rem; }
     @media (min-width: 760px) {
       h1 { font-size: 1.45rem; }
       .toolbar { grid-template-columns: 1fr auto; align-items: center; }
@@ -239,11 +57,7 @@
   <div class="wrap">
     <h1>Euro Cine networking gyorslista</h1>
     <div class="sub">Animációs / VFX / produceri kapcsolatok · mobilos használatra</div>
-    <div class="pitch">
-      <b>1 mondatos pitch:</b>
-      Animációs/VFX stúdióként olyan producerekhez, reklámfilmes és service-production partnerekhez kapcsolódnánk,
-      akiknek külső animációs, 3D, motion design vagy VFX kapacitás kellhet.
-    </div>
+    <div class="note">Gyorsnézet: prioritás, szerep, miért fontos, cél. A javasolt nyitás/pitch irány csak a lenyitható részletekben szerepel.</div>
   </div>
 </header>
 
@@ -261,188 +75,318 @@
   <section id="top">
     <div class="section-title">Ha csak 5 emberre van idő</div>
     <div class="grid">
+      
       <article class="card" data-prio="A" data-search="Puskás Bence D-BUG Studios VFX producer animation animáció">
         <div class="head"><span class="prio a">A</span><div><p class="name">Puskás Bence</p><p class="role">D-BUG Studios · VFX producer</p></div></div>
-        <p class="why"><b>Leggyorsabb konkrét lead:</b> VFX producer; animációs/VFX beszállítói irányban jó kapcsolódás.</p>
-        <p class="say">„Animációs / CG / motion kapacitással tudnánk beszállni D-BUG projektekbe.”</p>
-        <p class="goal">Cél: rövid call + showreel.</p>
+        <p class="why">Erős konkrét lead animációs/VFX beszállítói irányban.</p>
+        <p class="goal">Cél: call + showreel.</p>
+        
       </article>
-
-      <article class="card" data-prio="A" data-search="Adrian Sabau Family Film Romania Producer Head of Film Television feature TV service production">
+    
+      <article class="card" data-prio="A" data-search="Adrian Sabau Family Film Romania Producer Head of Film Television Warner MGM Netflix Disney Wednesday The Nun">
         <div class="head"><span class="prio a">A</span><div><p class="name">Adrian Sabau</p><p class="role">Family Film · Producer, Head of Film & Television</p></div></div>
-        <p class="why"><b>Nemzetközi feature/TV produceri lead:</b> 25+ nemzetközi film és TV-sorozat, nagy stúdiók referenciáival.</p>
-        <p class="say">„Nemzetközi film/TV service-production pipeline-ba tudunk animációs, VFX, 3D vagy motion kapacitással kapcsolódni.”</p>
-        <p class="goal">Cél: konkrét film/TV és reklámfilmes igények feltérképezése + showreel.</p>
+        <p class="why">Erős produceri / film & television service-production lead Romániából.</p>
+        <p class="goal">Cél: aktuális film/TV és reklámfilmes igények feltérképezése + showreel.</p>
+        
       </article>
-
-      <article class="card" data-prio="A" data-search="Petra Iványi Lions Production producer funding koprodukció">
+    
+      <article class="card" data-prio="A" data-search="Petra Iványi Lions Production producer funding co-production EAVE EFA">
         <div class="head"><span class="prio a">A</span><div><p class="name">Petra Iványi</p><p class="role">Lions Production · Founder / Producer</p></div></div>
-        <p class="why"><b>Producer / funding / koprodukció:</b> feature & TV, nemzetközi service production.</p>
-        <p class="say">„Film/TV vagy reklámprodukciókba tudunk animációs/VFX kapacitással beszállni.”</p>
+        <p class="why">Funding, koprodukció, feature/TV, nemzetközi service production.</p>
         <p class="goal">Cél: stratégiai produceri kapcsolat.</p>
+        
       </article>
-
-      <article class="card" data-prio="A" data-search="Vladimir Gerasimov Lions Production Partner Producer reklám">
+    
+      <article class="card" data-prio="A" data-search="Vladimir Gerasimov Lions reklám producer CEE Bulgaria">
         <div class="head"><span class="prio a">A</span><div><p class="name">Vladimir Gerasimov</p><p class="role">Lions Production · Partner / Producer</p></div></div>
-        <p class="why"><b>Reklám + CEE production:</b> bolgár/regionális reklámfilmes produceri háttér.</p>
-        <p class="say">„Reklámfilmes projektekhez tudunk animációs, VFX vagy motion design támogatást adni.”</p>
-        <p class="goal">Cél: reklám / service / regionális partner.</p>
+        <p class="why">Reklámfilmes háttér, CEE és bolgár production network.</p>
+        <p class="goal">Cél: reklám / service partner.</p>
+        
       </article>
-
-      <article class="card" data-prio="A" data-search="Judit Stalter Laokoon Filmgroup producer international service">
+    
+      <article class="card" data-prio="A" data-search="Judit Stalter Laokoon producer international service New York">
         <div class="head"><span class="prio a">A</span><div><p class="name">Judit Stalter</p><p class="role">Laokoon Filmgroup · CEO / Producer</p></div></div>
-        <p class="why"><b>High-end stratégiai producer:</b> nemzetközi produkciók, USA–EU kapcsolatok.</p>
-        <p class="say">„Nemzetközi live-action produkciók mellé tudunk animációs/VFX/post kapacitást biztosítani.”</p>
-        <p class="goal">Cél: hosszabb távú produceri kapcsolat.</p>
+        <p class="why">High-end producer, nemzetközi service / koprodukciós kapu.</p>
+        <p class="goal">Cél: stratégiai kapcsolat.</p>
+        
       </article>
+    
     </div>
   </section>
 
   <section>
     <div class="section-title">Teljes esti lista részletekkel</div>
     <div class="grid" id="cards">
-
+      
       <article class="card" data-prio="A" data-search="Puskás Bence D-BUG Studios VFX producer animation animáció">
         <div class="head"><span class="prio a">A</span><div><p class="name">Puskás Bence</p><p class="role">D-BUG Studios · VFX producer</p></div></div>
         <p class="why">Erős konkrét lead animációs/VFX beszállítói irányban.</p>
-        <p class="say">„Animációs / CG / motion kapacitással tudnánk beszállni.”</p>
         <p class="goal">Cél: call + showreel.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>D-BUG: VFX / animation / commercial profil.</li><li>Jó belépés: konkrét kapacitás, gyors pilot, showreel.</li></ul><div class="tagrow"><span class="tag">VFX</span><span class="tag">animation</span><span class="tag">gyors lead</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>D-BUG: VFX / animation / commercial profil.</li>
+<li>Jó belépés: konkrét kapacitás, gyors pilot, showreel.</li>
+<li>Személyes megjegyzés: VFX producerként releváns, mert animációs kapacitás oldalról lehet kapcsolódni.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Animációs / CG / motion kapacitással tudnánk beszállni D-BUG projektekbe.</p>
+            <div class="tagrow"><span class="tag">VFX</span><span class="tag">animation</span><span class="tag">gyors lead</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="A" data-search="Adrian Sabau Family Film Romania Producer Head of Film Television Warner MGM Netflix Disney Wednesday The Nun">
         <div class="head"><span class="prio a">A</span><div><p class="name">Adrian Sabau</p><p class="role">Family Film · Producer, Head of Film & Television</p></div></div>
         <p class="why">Erős produceri / film & television service-production lead Romániából.</p>
-        <p class="say">„Nemzetközi film/TV produkciók mellé tudunk animációs, VFX, 3D, previs vagy motion design kapacitást biztosítani.”</p>
         <p class="goal">Cél: aktuális film/TV és reklámfilmes igények feltérképezése + showreel.</p>
-        <details><summary>Részletek</summary><div class="details"><ul>
-          <li>2016 óta 25+ nemzetközi feature film és TV-sorozat Romániában és külföldön.</li>
-          <li>Referenciák: Warner Brothers – The Nun; MGM – Wednesday S1; Netflix – Christmas Prince trilógia; 20th Century & Disney – We Were The Lucky Ones; Hallmark; MPCA; Borat 2; Around The World in 80 Days; Tin Soldier; upcoming Bedlam / Black Victoriana 2026.</li>
-          <li>Korábbi A- FamilyFilm leadet A-ra érdemes emelni: nemcsak reklámfilmes, hanem nemzetközi film/TV service-production kapcsolat.</li>
-          <li>Jó irány: VFX, 3D, cleanup, previs, animáció, motion, post pipeline, reklámfilmes kiegészítő munka.</li>
-        </ul><div class="tagrow"><span class="tag">feature/TV</span><span class="tag">service production</span><span class="tag">Romania</span><span class="tag">A-prioritás</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>2016 óta 25+ nemzetközi feature film és TV-sorozat Romániában és külföldön.</li>
+<li>Referenciák: Warner Brothers – The Nun; MGM – Wednesday S1; Netflix – Christmas Prince trilógia; 20th Century & Disney – We Were The Lucky Ones; Hallmark; MPCA; Borat 2; Around The World in 80 Days; Tin Soldier; upcoming Bedlam / Black Victoriana 2026.</li>
+<li>Korábbi A- FamilyFilm leadet A-ra érdemes emelni: nemcsak reklámfilmes, hanem nemzetközi film/TV service-production kapcsolat.</li>
+<li>Jó irány: VFX, 3D, cleanup, previs, animáció, motion, post pipeline, reklámfilmes kiegészítő munka.</li>
+<li>Megjegyzés: korábban Adrian családneve bizonytalan volt; pontosítás alapján Adrian Sabau, Romania, Producer, Head of Film & Television, Family Film.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Nemzetközi film/TV produkciók mellé tudunk animációs, VFX, 3D, previs vagy motion design kapacitást biztosítani.</p>
+            <div class="tagrow"><span class="tag">feature/TV</span><span class="tag">service production</span><span class="tag">Romania</span><span class="tag">A-prioritás</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="A" data-search="Petra Iványi Lions Production producer funding co-production EAVE EFA">
         <div class="head"><span class="prio a">A</span><div><p class="name">Petra Iványi</p><p class="role">Lions Production · Founder / Producer</p></div></div>
         <p class="why">Funding, koprodukció, feature/TV, nemzetközi service production.</p>
-        <p class="say">„Nemzetközi production pipeline-ba illeszthető animációs/VFX kapacitást tudunk adni.”</p>
         <p class="goal">Cél: stratégiai produceri kapcsolat.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Lions: Budapest–Sofia production service.</li><li>Petra: filmfinanszírozás, regulatory, nemzetközi koprodukció, creative development.</li><li>Profi, rövid, produceri nyelvű megkeresés kell.</li></ul><div class="tagrow"><span class="tag">producer</span><span class="tag">funding</span><span class="tag">co-production</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Lions: Budapest–Sofia production service.</li>
+<li>Petra: filmfinanszírozás, regulatory, nemzetközi koprodukció, creative development.</li>
+<li>Profi, rövid, produceri nyelvű megkeresés kell.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Nemzetközi production pipeline-ba illeszthető animációs/VFX kapacitást tudunk adni.</p>
+            <div class="tagrow"><span class="tag">producer</span><span class="tag">funding</span><span class="tag">co-production</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="A" data-search="Vladimir Gerasimov Lions reklám producer CEE Bulgaria">
         <div class="head"><span class="prio a">A</span><div><p class="name">Vladimir Gerasimov</p><p class="role">Lions Production · Partner / Producer</p></div></div>
         <p class="why">Reklámfilmes háttér, CEE és bolgár production network.</p>
-        <p class="say">„Reklámfilmes / branded content projektekhez tudunk animációs, VFX vagy motion támogatást adni.”</p>
         <p class="goal">Cél: reklám / service partner.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Noble Graphics/TBWA háttér; Cannes Young Lions Gold.</li><li>Jó irány: reklám, branded content, 3D, VFX, motion.</li></ul><div class="tagrow"><span class="tag">reklám</span><span class="tag">CEE</span><span class="tag">producer</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Noble Graphics/TBWA háttér; Cannes Young Lions Gold.</li>
+<li>Jó irány: reklám, branded content, 3D, VFX, motion.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Reklámfilmes / branded content projektekhez tudunk animációs, VFX vagy motion támogatást adni.</p>
+            <div class="tagrow"><span class="tag">reklám</span><span class="tag">CEE</span><span class="tag">producer</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="A" data-search="Judit Stalter Laokoon producer international service New York">
         <div class="head"><span class="prio a">A</span><div><p class="name">Judit Stalter</p><p class="role">Laokoon Filmgroup · CEO / Producer</p></div></div>
         <p class="why">High-end producer, nemzetközi service / koprodukciós kapu.</p>
-        <p class="say">„Live-action produkciók mellé animációs/VFX/post kapacitást tudunk biztosítani.”</p>
         <p class="goal">Cél: stratégiai kapcsolat.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Laokoon: Budapest + New York, nemzetközi produkciós háttér.</li><li>Inkább hosszabb távú gatekeeper, nem gyors sales lead.</li><li>Hangnem: rövid, konkrét, nagyon professzionális.</li></ul><div class="tagrow"><span class="tag">high-end</span><span class="tag">international</span><span class="tag">producer</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Laokoon: Budapest + New York, nemzetközi produkciós háttér.</li>
+<li>Inkább hosszabb távú gatekeeper, nem gyors sales lead.</li>
+<li>Hangnem: rövid, konkrét, nagyon professzionális.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Live-action produkciók mellé animációs/VFX/post kapacitást tudunk biztosítani.</p>
+            <div class="tagrow"><span class="tag">high-end</span><span class="tag">international</span><span class="tag">producer</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="B" data-search="Ferich László DIVISION FILM reklám producer commercial">
         <div class="head"><span class="prio b">B+</span><div><p class="name">Ferich László</p><p class="role">DIVISION.FILM · reklámproducer / EP</p></div></div>
         <p class="why">Élőszereplős reklámprodukciók, jó live-action + VFX/motion irány.</p>
-        <p class="say">„Live-action reklámok mellé tudunk animációs, VFX, motion design vagy CGI kiegészítést adni.”</p>
         <p class="goal">Cél: reklámfilmes beszállítói kapcsolat.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Commercial / service production profil.</li><li>Erős, ha gyors turnaround és reklámreferenciák vannak.</li></ul><div class="tagrow"><span class="tag">reklám</span><span class="tag">live-action+VFX</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Commercial / service production profil.</li>
+<li>Erős, ha gyors turnaround és reklámreferenciák vannak.</li>
+<li>Megjegyzés: reklámproducer, élő szereplős dolgokat készít.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Live-action reklámok mellé tudunk animációs, VFX, motion design vagy CGI kiegészítést adni.</p>
+            <div class="tagrow"><span class="tag">reklám</span><span class="tag">live-action+VFX</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="B" data-search="PropCheck Frank Angela Victoria 3D promo video">
         <div class="head"><span class="prio b">B+</span><div><p class="name">PropCheck Team</p><p class="role">Frank / Angela / Victoria · 3D / promó</p></div></div>
         <p class="why">Konkrétan ajánlottak 3D-s és promóvideós együttműködést.</p>
-        <p class="say">„Beszéltünk a 3D és promóvideós együttműködésről, ezt szívesen folytatnánk.”</p>
         <p class="goal">Cél: pilot / első projekt.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Inkább tech / vizualizációs ügyfél, nem klasszikus filmes buyer.</li><li>Jó irány: 3D demo, platformbemutató, promóvideó, explainer.</li></ul><div class="tagrow"><span class="tag">3D</span><span class="tag">promó</span><span class="tag">pilot</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Inkább tech / vizualizációs ügyfél, nem klasszikus filmes buyer.</li>
+<li>Jó irány: 3D demo, platformbemutató, promóvideó, explainer.</li>
+<li>Megjegyzés: Frankkel, Angelával és Victoriával volt találkozó; együttműködést ajánlottak 3D-s témában és promóvideók készítésében.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> A 3D és promóvideós együttműködésről beszéltünk, ezt szívesen folytatnánk.</p>
+            <div class="tagrow"><span class="tag">3D</span><span class="tag">promó</span><span class="tag">pilot</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="B" data-search="Bársony Dávid NFI Filmlabor compositing VFX">
         <div class="head"><span class="prio b">B+</span><div><p class="name">Bársony Dávid</p><p class="role">NFI Filmlabor · compositing / VFX</p></div></div>
         <p class="why">Utómunka, kompozitálás, nyitott együttműködésre.</p>
-        <p class="say">„Animáció + compositing + live-action integráció témában lenne jó beszélni.”</p>
         <p class="goal">Cél: szakmai post-production kapcsolat.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Compositing / VFX / NFI Filmlabor háttér.</li><li>Hasznos pipeline, delivery és live-action+animation integrációhoz.</li></ul><div class="tagrow"><span class="tag">compositing</span><span class="tag">post</span><span class="tag">VFX</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Compositing / VFX / NFI Filmlabor háttér.</li>
+<li>Hasznos pipeline, delivery és live-action+animation integrációhoz.</li>
+<li>Megjegyzés: NFI Filmlaborban dolgozik, utómunkával foglalkozik, kompozitálás területen; nyitott együttműködésre.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Animáció + compositing + live-action integráció témában lenne jó beszélni.</p>
+            <div class="tagrow"><span class="tag">compositing</span><span class="tag">post</span><span class="tag">VFX</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="B" data-search="Markos Levente hangutómunka sound post audio">
         <div class="head"><span class="prio b">B+</span><div><p class="name">Markos Levente</p><p class="role">hangutómunka / sound post</p></div></div>
         <p class="why">Hangutómunka; szívesen segít.</p>
-        <p class="say">„Animációs projektek hangutómunkája / sound design kapcsán keresnénk.”</p>
         <p class="goal">Cél: audio-post partner.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Animációhoz: sound design, foley, voice cleanup, mix, delivery.</li></ul><div class="tagrow"><span class="tag">sound</span><span class="tag">audio-post</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Animációhoz: sound design, foley, voice cleanup, mix, delivery.</li>
+<li>Megjegyzés: hang utómunkával foglalkozik, ilyen témában kereshető, szívesen segít.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Animációs projektek hangutómunkája / sound design kapcsán keresnénk.</p>
+            <div class="tagrow"><span class="tag">sound</span><span class="tag">audio-post</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="B" data-search="Rob Saunders SCS Exhibitions Euro Cine BSC Expo networking UK">
         <div class="head"><span class="prio b">B+</span><div><p class="name">Rob Saunders</p><p class="role">SCS Exhibitions · Euro Cine / BSC Expo</p></div></div>
         <p class="why">Erős rendezvényszervezői / UK film-TV networking kapu.</p>
-        <p class="say">„Kik azok a producerek vagy production cégek, akikkel animáció/VFX stúdióként érdemes beszélnünk?”</p>
         <p class="goal">Cél: bevezetők, ajánlások.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>BSC Expo / British Society of Cinematographers kapcsolódás.</li><li>Nem buyer, de erős network- és event-kapu.</li></ul><div class="tagrow"><span class="tag">event</span><span class="tag">network</span><span class="tag">UK</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>BSC Expo / British Society of Cinematographers kapcsolódás.</li>
+<li>Nem buyer, de erős network- és event-kapu.</li>
+<li>Megjegyzés: szervezői csapatból, ezért referral és további kontaktok szempontjából fontos.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Kik azok a producerek vagy production cégek, akikkel animáció/VFX stúdióként érdemes beszélnünk?</p>
+            <div class="tagrow"><span class="tag">event</span><span class="tag">network</span><span class="tag">UK</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="B" data-search="Brian Donovan PGGB line producer UK production">
         <div class="head"><span class="prio b">B</span><div><p class="name">Brian Donovan</p><p class="role">PGGB · line producer / production network</p></div></div>
         <p class="why">UK production / line producer / Production Guild network.</p>
-        <p class="say">„CEE animation/VFX/post kapacitással tudnánk UK vagy nemzetközi produkciókat támogatni.”</p>
         <p class="goal">Cél: UK produceri / production network.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>High End TV és major feature production management tapasztalat.</li><li>Inkább network, nem direkt animációs buyer.</li></ul><div class="tagrow"><span class="tag">UK</span><span class="tag">line producer</span><span class="tag">network</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>High End TV és major feature production management tapasztalat.</li>
+<li>Inkább network, nem direkt animációs buyer.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> CEE animation/VFX/post kapacitással tudnánk UK vagy nemzetközi produkciókat támogatni.</p>
+            <div class="tagrow"><span class="tag">UK</span><span class="tag">line producer</span><span class="tag">network</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="B" data-search="Ifj Juhász László Juhász Team lovas produkció production">
         <div class="head"><span class="prio b">B-</span><div><p class="name">Ifj. Juhász László</p><p class="role">Juhász Team · lovas produkció</p></div></div>
         <p class="why">Nagy produkciókban dolgoznak, produceri kapcsolatokkal.</p>
-        <p class="say">„Történelmi / lovas / nagy produkciók VFX vagy animációs kiegészítése kapcsán tudnánk kapcsolódni.”</p>
         <p class="goal">Cél: produceri bevezetők.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Lovas, történelmi, fantasy vagy tömegjelenetes produkcióknál lehet jó kapcsolódás.</li></ul><div class="tagrow"><span class="tag">lovas</span><span class="tag">production</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Lovas, történelmi, fantasy vagy tömegjelenetes produkcióknál lehet jó kapcsolódás.</li>
+<li>Megjegyzés: lovas produkció, nagy produkciókban vesznek részt, producerekkel is van kapcsolata.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Történelmi / lovas / nagy produkciók VFX vagy animációs kiegészítése kapcsán tudnánk kapcsolódni.</p>
+            <div class="tagrow"><span class="tag">lovas</span><span class="tag">production</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="C" data-search="Can Togay filmrendező forgatókönyvíró creative">
         <div class="head"><span class="prio c">C+</span><div><p class="name">Can Togay</p><p class="role">filmrendező / forgatókönyvíró</p></div></div>
         <p class="why">Kreatív fejlesztési kapcsolat, nem direkt buyer.</p>
-        <p class="say">„Animációs történetfejlesztés vagy vizuális világépítés kapcsán szívesen beszélnénk.”</p>
         <p class="goal">Cél: alkotói kapcsolat.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Rendező, író, kulturális és media art háttér.</li></ul><div class="tagrow"><span class="tag">creative</span><span class="tag">writer</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Rendező, író, kulturális és media art háttér.</li>
+<li>Megjegyzés: filmrendező, forgatókönyvíró.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Animációs történetfejlesztés vagy vizuális világépítés kapcsán szívesen beszélnénk.</p>
+            <div class="tagrow"><span class="tag">creative</span><span class="tag">writer</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="C" data-search="Jonathan Harvey cinematographer Aalto DoP NFTS">
         <div class="head"><span class="prio c">C+</span><div><p class="name">Jonathan Harvey</p><p class="role">Cinematographer · Aalto University</p></div></div>
         <p class="why">DoP + oktatói kapcsolat, jó puha személyes follow-up.</p>
-        <p class="say">„Örültem, hogy megnézted a fotókiállítást, kíváncsi lennék, milyen benyomásod volt róla.”</p>
         <p class="goal">Cél: puha kapcsolatépítés.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>26 év cinematographer tapasztalat, NFTS UK.</li><li>Későbbi téma: live-action + VFX/animation integráció.</li></ul><div class="tagrow"><span class="tag">DoP</span><span class="tag">soft follow-up</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>26 év cinematographer tapasztalat, NFTS UK.</li>
+<li>Későbbi téma: live-action + VFX/animation integráció.</li>
+<li>Megjegyzés: kedves idősebb ember, megnézte a fotókiállítást; erről érdemes kérdezni, hogy tetszett-e neki.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Örültem, hogy megnézted a fotókiállítást, kíváncsi lennék, milyen benyomásod volt róla.</p>
+            <div class="tagrow"><span class="tag">DoP</span><span class="tag">soft follow-up</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="C" data-search="Miklos Buk HCA cinematographer AFI SZFE">
         <div class="head"><span class="prio c">C+</span><div><p class="name">Miklos Buk HCA</p><p class="role">Freelance Cinematographer</p></div></div>
         <p class="why">Cinematography / HCA / nemzetközi operatőri network.</p>
-        <p class="say">„Animáció/VFX és operatőri előkészítés kapcsolódásáról szívesen beszélnénk.”</p>
         <p class="goal">Cél: szakmai network.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>AFI MFA + SZFE operatőri háttér.</li><li>Virtual production, VFX-supervised shooting, CG integration irány lehet érdekes.</li></ul><div class="tagrow"><span class="tag">cinematography</span><span class="tag">HCA</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>AFI MFA + SZFE operatőri háttér.</li>
+<li>Virtual production, VFX-supervised shooting, CG integration irány lehet érdekes.</li>
+<li>Megjegyzés: HCA / operatőri kapcsolati kör miatt szakmai networkként hasznos.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Animáció/VFX és operatőri előkészítés kapcsolódásáról szívesen beszélnénk.</p>
+            <div class="tagrow"><span class="tag">cinematography</span><span class="tag">HCA</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="C" data-search="Henrik Moseid Softlights lighting cinematography">
         <div class="head"><span class="prio c">C+</span><div><p class="name">Henrik Moseid</p><p class="role">Softlights · Owner</p></div></div>
         <p class="why">Lighting / cinematography technikai kapcsolat.</p>
-        <p class="say">„A practical lighting és VFX/CG integráció kapcsán érdekes lenne beszélni.”</p>
         <p class="goal">Cél: technikai kapcsolat.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Cinema/TV lighting, custom lighting solutions.</li><li>Nem buyer, de technikai/cinematography network.</li></ul><div class="tagrow"><span class="tag">lighting</span><span class="tag">technical</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Cinema/TV lighting, custom lighting solutions.</li>
+<li>Nem buyer, de technikai/cinematography network.</li>
+<li>Megjegyzés: előadó volt a 2F-ben, a Becoming a Movie Maker előadás környékén.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> A practical lighting és VFX/CG integráció kapcsán érdekes lenne beszélni.</p>
+            <div class="tagrow"><span class="tag">lighting</span><span class="tag">technical</span></div>
+          </div>
+        </details>
       </article>
-
+    
       <article class="card" data-prio="C" data-search="Iain Hazlewood Cinematography World editor PR media">
         <div class="head"><span class="prio c">C</span><div><p class="name">Iain Hazlewood</p><p class="role">Cinematography World · editor / digital manager</p></div></div>
         <p class="why">Szakmai média / PR / interjú lehetőség, nem buyer.</p>
-        <p class="say">„Animáció/VFX és cinematography metszetében tudnánk érdekes szakmai témát adni.”</p>
         <p class="goal">Cél: cikk / interjú / láthatóság.</p>
-        <details><summary>Részletek</summary><div class="details"><ul><li>Editor, writer, content editing háttér.</li><li>Jó lehet Euro Cine utókommunikációhoz.</li></ul><div class="tagrow"><span class="tag">PR</span><span class="tag">media</span></div></div></details>
+        
+        <details><summary>Részletek</summary>
+          <div class="details">
+            <ul><li>Editor, writer, content editing háttér.</li>
+<li>Jó lehet Euro Cine utókommunikációhoz.</li>
+<li>Megjegyzés: inkább szakmai média és PR-kapcsolat, nem producer/buyer.</li></ul>
+            <p><b>Lehetséges nyitás / pitch irány:</b> Animáció/VFX és cinematography metszetében tudnánk érdekes szakmai témát adni.</p>
+            <div class="tagrow"><span class="tag">PR</span><span class="tag">media</span></div>
+          </div>
+        </details>
       </article>
-
+    
     </div>
   </section>
 </main>
