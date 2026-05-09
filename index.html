@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juhar 23</title>
+  <meta name="description" content="Egyszerű, gyorsan betöltődő statikus mintaoldal.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f3ec;
+      --card: #ffffff;
+      --text: #202020;
+      --muted: #666666;
+      --accent: #8b3f1f;
+      --border: #eadfce;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(100%, 720px);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: clamp(28px, 6vw, 56px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.1rem, 9vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Statikus mintaoldal</p>
+    <h1>Juhar 23</h1>
+    <p>
+      Ez egy minimális, mobilbarát GitHub Pages mintaoldal. Nincs külső betűtípus,
+      nincs JavaScript, nincs nehéz asset — ezért gyorsan betöltődik telefonon is.
+    </p>
+    <a class="button" href="mailto:hello@example.com">Kapcsolat</a>
+    <footer>
+      Készült egyszerű HTML + beépített CSS alapon.
+    </footer>
+  </main>
+</body>
+</html>
